@@ -27,18 +27,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-'''
-def drawFractalLine(width, height, size, levels): 
-    if levels == 0: 
-        forward(size) 
-        return
-    size /= 3.0
-    drawFractalLine(width, height, size, levels-1) 
-    left(60) 
-    drawFractalLine(width, height, size, levels-1) 
-    right(120) 
-    drawFractalLine(width, height, size, levels-1) 
-    left(60) 
-    drawFractalLine(width, height, size, levels-1) 
-'''
