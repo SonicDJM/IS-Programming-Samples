@@ -42,3 +42,4 @@ def drawFractalLine(width, height, size, levels):
     left(60) 
     drawFractalLine(width, height, size, levels-1) 
 '''
+# f = open("/home/derek/rando_graph.tsv", 'r')
