@@ -1,0 +1,2 @@
+Java uses two filetypes for programing, .java is for source files and .class is
+complied code ready to execute.
