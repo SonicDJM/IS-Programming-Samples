@@ -1,0 +1,13 @@
+public class ifLoopIntro
+{
+  public static void main(String[] args)
+  {
+    int hoursWorked;
+    hoursWorked = 40;
+    boolean workedOvertime;
+    if (hoursWorked > 40);
+    hoursWorked = true;
+    else;
+    hoursWorked = false;
+  }
+}

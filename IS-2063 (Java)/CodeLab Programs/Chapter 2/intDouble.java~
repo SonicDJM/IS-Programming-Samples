@@ -1,0 +1,13 @@
+public class intDouble
+{
+  public static void main(String[] args)
+  {
+    int num;
+    double cost;
+    num = 10;
+    double = 5.5;
+    System.out.print(num cost"\n");
+  }
+}
+  
+  

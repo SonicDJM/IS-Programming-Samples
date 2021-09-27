@@ -1,0 +1,9 @@
+public class convertString
+{
+  public static void main(String[] args)
+  {
+    int num = 49;
+    float decim = 36.54;
+    System.out.println(String(num) + String(decim));
+  }
+}

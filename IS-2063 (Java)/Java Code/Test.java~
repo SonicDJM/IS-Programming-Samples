@@ -1,0 +1,12 @@
+public class Test
+{
+   public static void main(String[] args)
+   {
+      int value1 = 9;
+      System.out.printf(value1);
+      int value2 = 45;
+      System.out.printf(value2);
+      System.out.printf(value3);
+      value3 = 16;
+   }
+}

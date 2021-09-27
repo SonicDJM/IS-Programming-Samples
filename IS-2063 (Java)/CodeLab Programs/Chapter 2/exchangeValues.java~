@@ -1,0 +1,18 @@
+public class exchangeValues
+{
+  public static void main(String[] args)
+  {
+    int i;
+    int j;
+    i = 22;
+    j = 44;
+    int itemp;
+    int jtemp;
+    System.out.println("Before: " + i + "and" + j);
+    itemp = i;
+    jtemp = j;
+    i = jtemp;
+    j = itemp;
+    System.out.println("After: " + i + "and" + j);
+  }
+}
