@@ -1,0 +1,8 @@
+public class methodDef
+{
+  static void printDottedLine()
+  {
+    System.out.printf(".....%n");
+  }
+  printDottedLine();
+}

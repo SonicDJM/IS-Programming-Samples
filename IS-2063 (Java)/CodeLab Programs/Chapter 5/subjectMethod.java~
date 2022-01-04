@@ -1,0 +1,40 @@
+public class stringMethod2
+{ 
+  public static String min(String a, String b, String c)
+  {
+     String max1 = a;
+     String max2 = c;
+     if (b.compareTo(a)>0)
+     {
+       if (b.compareTo(c)>0)
+       {
+         max1 = b;
+       }
+       else
+       {
+         max1 = c;
+       }
+     }
+     else if (b.compareTo(c)>0)
+     {
+       if (b.compareTo(a)>0)
+       {
+         max1 = b;
+       }
+       else
+       {
+         max1 = a;
+       }
+     }
+     return max1;
+  }
+  
+  public static void main(String[] args)
+  { 
+    String small = "a";
+    String medium = "two";
+    String large = "three";
+    String value = min(small, medium, large);
+    System.out.println(value);
+  }
+}

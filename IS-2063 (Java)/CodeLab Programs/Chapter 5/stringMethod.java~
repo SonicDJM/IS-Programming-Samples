@@ -1,0 +1,13 @@
+public class twoMethods
+{ 
+  public static void max(int a)
+  {
+     int temp = a + 6;
+     System.out.println(temp);
+  }
+  
+  public static void main(String[] args)
+  { 
+    max(14);
+  }
+}

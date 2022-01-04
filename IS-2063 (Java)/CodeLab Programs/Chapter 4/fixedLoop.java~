@@ -1,0 +1,20 @@
+public class fixedLoop
+{
+  public static void main(String[] args)
+  {
+    int sum = 0;
+    for (10)
+    {
+      sum += 1;
+      System.out.println(sum);
+    }
+    if (sum == 10)
+    {
+      System.out.println("It works");
+    }
+    else
+    {
+      System.out.println("It does not work");
+    }
+  }
+}

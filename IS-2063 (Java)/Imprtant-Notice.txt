@@ -1,2 +1,2 @@
-Java uses two filetypes for programing, .java is for source files and .class is
-complied code ready to execute.
+Java uses three filetypes for programing, .java is for source files, .class is
+complied code ready to execute, and .java~ is most likely program metadata.

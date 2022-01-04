@@ -1,0 +1,20 @@
+public class whileIntro
+{
+  public static void main(String[] args)
+  {
+    int num = 50;
+    System.out.println("Inital value: " + num);
+    while (num != 0)
+    {
+      num--;
+      System.out.println(num);
+    }
+    System.out.println("The Ending Value is: " + num);
+    while (num < 100)
+    {
+      num++;
+      System.out.println(num);
+    }
+    System.out.println("The Final Value is: " + num);
+  }
+}
