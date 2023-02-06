@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Title of My Program</title>
+      <meta charset="utf-8">
+   </head>
+   <body>
+    <div>
+   		Enter a Number: <input type="text" id="input1">
+		Enter a Number: <input type="text" id="input2">
+	    <input type="button" id="add" value="Add"> 
+		<input type="button" id="multiply" value="Multiply">
+		<p id="status"></p>
+	</div>
+
+<script>
+	var add = document.getElementById("add"); //place in variable to tidy up
+	var multiply = document.getElementById("multiply"); //place in variable to tidy up 
+	var myStatus = document.getElementById("status"); //place in variable to tidy up
+	
+	add.onclick = function () {
+		var number1 = +document.getElementById("input1").value;  //put + to force a number
+		var number2 = +document.getElementById("input2").value; //put + to force a number
+		myStatus.innerHTML = number1 + " + " + number2 + " = " + (number1 + number2);
+	}
+	
+	multiply.onclick = function () {
+		var number1 = +document.getElementById("input1").value;  //put + to force a number
+		var number2 = +document.getElementById("input2").value; //put + to force a number
+		myStatus.innerHTML = number1 + " * " + number2 + " = " + (number1 * number2);
+	}
+</script>
+</body>
+</html>

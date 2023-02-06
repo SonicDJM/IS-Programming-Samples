@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Form Testing</title>
+     <meta charset="utf-8">
+</head>
+<body>
+	 <h1>Register Online</h1>
+	 <p>* Is a required field</p>
+	 <form name="register" id="register" method="post" action="process.php">
+     <p>First Name<br>
+     <input type="text" name="firstname" id="firstname"></p>
+     <p>Last Name *<br>
+     <input type="text" name="lastname" id="lastname" required></p>
+     <p>Password *<br>
+     <input type="password" name="pw" id="pw" required></p>
+     <p>Email *<br>
+     <input type="email" name="email" id="email" required></p>
+	 <input type="submit" name="register-sub" id="register-sub" value="Register Now!">
+	 <input type="reset" name="register-reset" id="register-reset" value="Reset Form">
+	 </form>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Login Form</title>
+   <meta charset="utf-8">
+<style>
+	/* Style all input fields */
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+/* Style the submit button */
+#sub {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Style the container for inputs */
+.container {
+  width: 300px;
+  margin: 0 auto;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* The message box is shown only when the user clicks on the password field */
+#message {
+  display:none;
+  width: 300px;
+  margin: 0 auto;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color when the requirements are right */
+.valid {
+  color: green;
+}
+
+/* Add a red text color when the requirements are wrong */
+.invalid {
+  color: red;
+}
+</style>
+</head>
+<body>
+   <div class="container">
+      <form action="process.php" method="post" id="loginform" name="loginform">
+         <p>Username<br>
+         <input type="text" id="usr" name="usr" required></p>
+	     <p>Password<br>
+         <input type="password" id="psw" name="psw" 
+		 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_|$|^|!]).{15,}" title="Must contain at least one number, one special character, one uppercase and lowercase letter, and at least 15 total characters" 
+		 required>
+	     </p>
+         <input type="submit" id="sub" name="sub" value="Log In">
+      </form>
+   </div>
+   <div id="message">
+      <h3>Password must contain the following:</h3>
+      <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+      <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+      <p id="number" class="invalid">A <b>number</b></p>
+	  <p id="special" class="invalid">A <b>special character</b></p>	  
+      <p id="length" class="invalid">Minimum <b>15 characters</b></p>
+   </div>
+
+<script>
+	var myInput = document.getElementById("psw");
+//TASK c - create a variable called letter and assign it the html element with the id  letter
+var letter = document.getElementById("letter");
+//TASK d - create a variable called capital and assign it the html element with the id capital
+var capital = document.getElementById("capital");
+//TASK e - create a variable called number and assign it the html element with the id number
+var number = document.getElementById("number");
+//TASK f - create a variable called special and assign it the html element with the id special
+var special = document.getElementById("special");
+//TASK g - create a variable called length and assign it the html element with the id length
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+// TASK h - replace uuuu with the property that triggers an event when the password input box receives focus
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+// TASK i - replace vvvv with the property that triggers an event when the password input box loses focus
+myInput.blur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+// TASK j - replace wwww with the property that triggers an event when the user releases a key in the input box
+myInput.keyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) { 
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+}
+
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) { 
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) { 
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  // Validate special characters
+  //TASK k - replace xxxx with the proper regex pattern to match the special characters
+  var specialCharacters = /(?=.*[_|$|^|!])/g;
+  if(myInput.value.match(specialCharacters)) { 
+    special.classList.remove("invalid");
+    special.classList.add("valid");
+  } else {
+    special.classList.remove("valid");
+    special.classList.add("invalid");
+  }
+
+  // Validate length
+  //TASK l = replace yyyy with the correct value to check the string length
+  if(myInput.value.length >= 15) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+</script>
+</body>
+</html>
