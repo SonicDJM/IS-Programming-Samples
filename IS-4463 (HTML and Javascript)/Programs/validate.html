@@ -81,32 +81,24 @@ input {
 
 <script>
 	var myInput = document.getElementById("psw");
-//TASK c - create a variable called letter and assign it the html element with the id  letter
 var letter = document.getElementById("letter");
-//TASK d - create a variable called capital and assign it the html element with the id capital
 var capital = document.getElementById("capital");
-//TASK e - create a variable called number and assign it the html element with the id number
 var number = document.getElementById("number");
-//TASK f - create a variable called special and assign it the html element with the id special
 var special = document.getElementById("special");
-//TASK g - create a variable called length and assign it the html element with the id length
 var length = document.getElementById("length");
 
 // When the user clicks on the password field, show the message box
-// TASK h - replace uuuu with the property that triggers an event when the password input box receives focus
 myInput.onfocus = function() {
   document.getElementById("message").style.display = "block";
 }
 
 // When the user clicks outside of the password field, hide the message box
-// TASK i - replace vvvv with the property that triggers an event when the password input box loses focus
 myInput.blur = function() {
   document.getElementById("message").style.display = "none";
 }
 
 // When the user starts to type something inside the password field
-// TASK j - replace wwww with the property that triggers an event when the user releases a key in the input box
-myInput.keyup = function() {
+myInput.onkeyup = function() {
   // Validate lowercase letters
   var lowerCaseLetters = /[a-z]/g;
   if(myInput.value.match(lowerCaseLetters)) { 
@@ -138,7 +130,6 @@ myInput.keyup = function() {
   }
 
   // Validate special characters
-  //TASK k - replace xxxx with the proper regex pattern to match the special characters
   var specialCharacters = /(?=.*[_|$|^|!])/g;
   if(myInput.value.match(specialCharacters)) { 
     special.classList.remove("invalid");
@@ -149,7 +140,6 @@ myInput.keyup = function() {
   }
 
   // Validate length
-  //TASK l = replace yyyy with the correct value to check the string length
   if(myInput.value.length >= 15) {
     length.classList.remove("invalid");
     length.classList.add("valid");
