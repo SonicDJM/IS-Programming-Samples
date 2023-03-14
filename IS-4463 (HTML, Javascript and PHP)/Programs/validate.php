@@ -1,5 +1,4 @@
 <?php
-//TASK b - create variables named usr, psw, pswErr, and usrErr and initialize them to empty values
 $usr = "";
 $psw = "";
 $pswErr = "";
@@ -7,12 +6,10 @@ $usrErr = "";
 $logErr = true;
 $display = "display:none;";
 
-//TASK c - replace "aaaa" with the proper superglobal variable to capture all the post array elements
-if ($_POST == "POST") {
-
+if ($_SERVER == "REQUEST_METHOD") {
+				//POST
   $display = "display:block;";
 
-//TASK d - replace "bbbb" with the proper superglobal variable to capture the username field
   $usr = validate_fields($_POST["usr"]);  
   $pattern = "/^[a-zA-Z ]*$/";
   if (empty($usr)) {
@@ -26,10 +23,10 @@ if ($_POST == "POST") {
   }
  
  
-//Task e - replace "cccc" with the proper superglobal variable to capture the password field
+
   $psw = validate_fields($_POST["psw"]);
-//TASK f - using the pattern above, create a new pattern to validate the password field 
-  $pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_|$|^|!]).{15,}";    
+
+  $pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_|$|^|!|/]).{15,}";    
   if (empty($psw)) {
     $pswErr = "Password is required";
     $logErr = true;
@@ -42,13 +39,13 @@ if ($_POST == "POST") {
 }
 
 if ( !$logErr)  {
-//TASK g - Issue a Session ID
+
 session_start();
 }
 
-//TASK h - create a function called validate_fields() that accepts the data field checks for new lines, leading and trailing spaces, removes backslashes, and encodes HTML and return the cleaned data back
+
 function validate_fields($data) {
-	return htmlentities(trim(str_replace(arry("\n", "\r", "\\"), '', $data)));
+	return htmlentities(trim(str_replace(array("\n", "\r", "\\"), '', $data)));
 }
 ?>
 <!DOCTYPE html>
