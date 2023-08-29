@@ -20,8 +20,11 @@ def cubeVol(value):
     return finalVal
 
 def tpVol(value):
-    # Unable to do the math relating to such a shape, Sorry about that
-    return
+    # Input height value
+    tpHight = float(input("Please input the height of the Triangular Pyramid: "))
+    # Performs calculations
+    finalVal = (value * tpHight) * (1/3)
+    return finalVal
 
 
 
@@ -29,20 +32,28 @@ def main():
     # Input function
     while True:
         InputNum = float(input("Please input a positive number: "))
+
         if InputNum < 0:
             print("Invalid Number, try again please")
+
         else:
-            shapeType = str(input("Select Sphere, Cube, or Triangualar Pyramid: "))
+            shapeType = str(input("Select Sphere, Cube, or Triangular Pyramid: "))
+
             if shapeType == "Sphere":
                 valueSphere = sphereVol(InputNum)
                 print("The volume of a sphere with the given area is: ", valueSphere)
+                break
+
             elif shapeType == "Cube":
                 valueCube = cubeVol(InputNum)
                 print("The volume of a cube with the given area is: ", valueCube)
+                break
+
             elif shapeType == "Triangular Pyramid":
-                #valueTP = tpVol(InputNum)
-                #print("The volume of a Triangular Pyramid with the given area is: ", valueTP)
-                print("Unable to do this")
+                valueTP = tpVol(InputNum)
+                print("The volume of a Triangular Pyramid with the given area is: ", valueTP)
+                break
+
             else:
                 print("Invalid Shape")
 
